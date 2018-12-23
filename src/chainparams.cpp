@@ -117,14 +117,14 @@ public:
         FILE * pFile;
         pFile = fopen ("c:\Bitjet\log.log","w");
 
-        genesis = CreateGenesisBlock(1545320476, 36876378, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1545320476, 3464921, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         std::cout << consensus.hashGenesisBlock.ToString();
         printf("consensus.hashGenesisBlock = %s\n", genesis.GetHash().ToString().c_str());
         printf("genesis.hashMerkleRoot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
         //fprintf(pFile, " consensus.hashGenesisBlock = %s\n", genesis.GetHash().ToString().c_str());
         //fprintf(pFile, "genesis.hashMerkleRoot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-
+/*
 
 
        uint256 TempHashHolding;
@@ -150,9 +150,9 @@ public:
                             fprintf(pFile, " hash = %s\n", bestGenesis.GetHash().ToString().c_str());
                             fprintf(pFile, "merklehash: = %s\n", bestGenesis.hashMerkleRoot.ToString().c_str());
 
+*/
 
-
-        assert(consensus.hashGenesisBlock == uint256S("0000005b27e2ca2f372b46c775477a25ed8a530dd60c3a238920f76d350265f9"));
+        assert(consensus.hashGenesisBlock == uint256S("0000044db29c6866bb25ed3f861119ba76ed10cf8b29fdc7c22246a55643a4f9"));
         assert(genesis.hashMerkleRoot == uint256S("473c82679bc7f74c27498a06fc3530d20d943a9a813687888d2f57067dee57de"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
