@@ -124,12 +124,12 @@ public:
         //fprintf(pFile, " consensus.hashGenesisBlock = %s\n", genesis.GetHash().ToString().c_str());
         //fprintf(pFile, "genesis.hashMerkleRoot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
 
-/*
+
 
        uint256 TempHashHolding;
        uint256 BestBlockHash = uint256S("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
        CBlock bestGenesis;
-        for (int i=0;i<5000000;i++) {
+        for (int i=0;i<50000000;i++) {
            genesis = CreateGenesisBlock(1545320476, i, 0x1d00ffff, 1, 50 * COIN);
             //genesis.hashPrevBlock = TempHashHolding;
             consensus.hashGenesisBlock = genesis.GetHash();
@@ -149,7 +149,7 @@ public:
                             fprintf(pFile, " hash = %s\n", bestGenesis.GetHash().ToString().c_str());
                             fprintf(pFile, "merklehash: = %s\n", bestGenesis.hashMerkleRoot.ToString().c_str());
 
-*/
+
 
         assert(consensus.hashGenesisBlock == uint256S("0000007f851cdac4288e6df8c2f9fdbb8669d4c0050943b1a0eb3198e8b12448"));
         assert(genesis.hashMerkleRoot == uint256S("473c82679bc7f74c27498a06fc3530d20d943a9a813687888d2f57067dee57de"));
