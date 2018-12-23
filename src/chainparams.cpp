@@ -150,12 +150,12 @@ public:
                              std::cout << "Mainnet ---\n";
                              std::cout << "  nonce: " << genesis.nNonce <<  "\n";
                              std::cout << "   time: " << genesis.nTime << "\n";
-                             std::cout << "   hash: " << genesis.GetHash(consensus).ToString().c_str() << "\n";
+                             std::cout << "   hash: " << genesis.GetHash().ToString().c_str() << "\n";
                              std::cout << "   merklehash: "  << genesis.hashMerkleRoot.ToString().c_str() << "\n";
 
                             fprintf(pFile, " nonce:  = %s\n", genesis.nNonce);
                             fprintf(pFile, "time = %s\n", genesis.nTime );
-                            fprintf(pFile, " hash = %s\n", genesis.GetHash(consensus).ToString().c_str());
+                            fprintf(pFile, " hash = %s\n", genesis.GetHash().ToString().c_str());
                             fprintf(pFile, "merklehash: = %s\n", genesis.hashMerkleRoot.ToString().c_str());
 
 
