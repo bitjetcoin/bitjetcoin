@@ -151,7 +151,7 @@ public:
                              std::cout << "   hash: " << genesis.GetHash().ToString().c_str() << "\n";
                              std::cout << "   merklehash: "  << genesis.hashMerkleRoot.ToString().c_str() << "\n"; */
 
-                            fprintf(pFile, " nonce:  = %s\n", genesis.nNonce);
+                            fprintf(pFile, " nonce:  = %i\n", genesis.nNonce);
                             //fprintf(pFile, "time = %s\n", genesis.nTime );
                             fprintf(pFile, " hash = %s\n", genesis.GetHash().ToString().c_str());
                             fprintf(pFile, "merklehash: = %s\n", genesis.hashMerkleRoot.ToString().c_str());
