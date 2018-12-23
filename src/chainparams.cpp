@@ -124,28 +124,30 @@ public:
         //fprintf(pFile, " consensus.hashGenesisBlock = %s\n", genesis.GetHash().ToString().c_str());
         //fprintf(pFile, "genesis.hashMerkleRoot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
 
-/*
 
-        uint256 TempHashHolding;
+
+       uint256 TempHashHolding;
        uint256 BestBlockHash = uint256S("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        for (int i=0;i<500000;i++) {
+       CBlock bestGenesis;
+        for (int i=0;i<5000000;i++) {
            genesis = CreateGenesisBlock(1545320476, i, 0x1d00ffff, 1, 50 * COIN);
-            genesis.hashPrevBlock = TempHashHolding;
+            //genesis.hashPrevBlock = TempHashHolding;
             consensus.hashGenesisBlock = genesis.GetHash();
 
             if (UintToArith256(consensus.hashGenesisBlock) < UintToArith256(BestBlockHash)) {
                 BestBlockHash = consensus.hashGenesisBlock;
+                bestGenesis = genesis;
                 //std::cout << BestBlockHash.GetHex() << " Nonce: " << i << "\n";
             }
 
-            TempHashHolding = consensus.hashGenesisBlock;
+            //TempHashHolding = consensus.hashGenesisBlock;
             //std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
         }
 
-                            fprintf(pFile, " nonce:  = %i\n", genesis.nNonce);
+                            fprintf(pFile, " nonce:  = %i\n", bestGenesis.nNonce);
                             //fprintf(pFile, "time = %s\n", genesis.nTime );
-                            fprintf(pFile, " hash = %s\n", genesis.GetHash().ToString().c_str());
-                            fprintf(pFile, "merklehash: = %s\n", genesis.hashMerkleRoot.ToString().c_str());
+                            fprintf(pFile, " hash = %s\n", bestGenesis.GetHash().ToString().c_str());
+                            fprintf(pFile, "merklehash: = %s\n", bestGenesis.hashMerkleRoot.ToString().c_str());
 
 
 
@@ -153,7 +155,7 @@ public:
 
 
 
-*/
+
         assert(consensus.hashGenesisBlock == uint256S("b03101aa2efb3d8e595d5860a75ee9fedc4ff6bbb920b195f147c3b88d2b9aff"));
         assert(genesis.hashMerkleRoot == uint256S("473c82679bc7f74c27498a06fc3530d20d943a9a813687888d2f57067dee57de"));
 
