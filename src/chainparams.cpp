@@ -141,10 +141,10 @@ public:
                                      ++genesis.nTime;
                                  }
 
-                                 if ((int)genesis.nNonce.GetUint64(0) % 10000 == 0)
+                                /*  if ((int)genesis.nNonce.GetUint64(0) % 10000 == 0)
                                  {
-                                      std::cout << strNetworkID << " hashTarget: " << hashTarget.ToString() << " nonce: " << genesis.nNonce.ToString() << " time: " << genesis.nTime << " hash: " << genesis.GetHash(consensus).ToString().c_str() << "\r";
-                                 }
+                                      std::cout << strNetworkID << " hashTarget: " << hashTarget.ToString() << " nonce: " << genesis.nNonce << " time: " << genesis.nTime << " hash: " << genesis.GetHash(consensus).ToString().c_str() << "\r";
+                                 } */
 
                     }
                              std::cout << "Mainnet ---\n";
