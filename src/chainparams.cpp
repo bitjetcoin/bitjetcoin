@@ -129,7 +129,7 @@ public:
        uint256 TempHashHolding;
        uint256 BestBlockHash = uint256S("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
        CBlock bestGenesis;
-        for (int i=0;i<50000000;i++) {
+        for (int i=0;i<5000000;i++) {
            genesis = CreateGenesisBlock(1545320476, i, 0x1d00ffff, 1, 50 * COIN);
             //genesis.hashPrevBlock = TempHashHolding;
             consensus.hashGenesisBlock = genesis.GetHash();
