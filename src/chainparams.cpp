@@ -126,7 +126,7 @@ public:
         //fprintf(pFile, "genesis.hashMerkleRoot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
 
 
-/*
+
        uint256 TempHashHolding;
        uint256 BestBlockHash = uint256S("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
        CBlock bestGenesis;
@@ -149,7 +149,7 @@ public:
                             //fprintf(pFile, "time = %s\n", genesis.nTime );
                             fprintf(pFile, " hash = %s\n", bestGenesis.GetHash().ToString().c_str());
                             fprintf(pFile, "merklehash: = %s\n", bestGenesis.hashMerkleRoot.ToString().c_str());
-*/
+
 
 
         assert(consensus.hashGenesisBlock == uint256S("0000005b27e2ca2f372b46c775477a25ed8a530dd60c3a238920f76d350265f9"));
