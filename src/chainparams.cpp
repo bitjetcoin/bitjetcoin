@@ -115,6 +115,8 @@ public:
         std::cout << consensus.hashGenesisBlock.ToString();
         printf("consensus.hashGenesisBlock = %s\n", genesis.GetHash().ToString().c_str());
         printf("genesis.hashMerkleRoot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
+        fprintf("c:\Bitjet\log.log", " consensus.hashGenesisBlock = %s\n", genesis.GetHash().ToString().c_str());
+        fprintf("c:\Bitjet\log.log", "genesis.hashMerkleRoot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
         assert(consensus.hashGenesisBlock == uint256S("0x00000000ab99e02aab62628a3d7d80e12ba2ee42ada34bbc2324b43624c82f47"));
         assert(genesis.hashMerkleRoot == uint256S("0x473c82679bc7f74c27498a06fc3530d20d943a9a813687888d2f57067dee57de"));
 
