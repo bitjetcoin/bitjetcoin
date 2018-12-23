@@ -125,31 +125,26 @@ public:
         //fprintf(pFile, "genesis.hashMerkleRoot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
 
 
-        // calculate Genesis Block
-                // Reset genesis
-                consensus.hashGenesisBlock = uint256S("0x");
-                std::cout << std::string("Begin calculating Mainnet Genesis Block:\n");
-                if (true && (genesis.GetHash(consensus) != consensus.hashGenesisBlock)) {
-        //                     LogPrintf("Calculating Mainnet Genesis Block:\n");
-                    arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
-                    uint256 hash;
-                    genesis.nNonce = ArithToUint256(0);
-                    while (UintToArith256(genesis.GetHash(consensus)) > hashTarget)
-                    {
-                        genesis.nNonce = ArithToUint256(UintToArith256(genesis.nNonce) + 1);
-                                 if (genesis.nNonce == ArithToUint256(arith_uint256(0)))
-                                 {
-                                     LogPrintf("NONCE WRAPPED, incrementing time");
-                                     std::cout << std::string("NONCE WRAPPED, incrementing time:\n");
-                                     ++genesis.nTime;
-                                 }
 
-                                /*  if ((int)genesis.nNonce.GetUint64(0) % 10000 == 0)
-                                 {
-                                      std::cout << strNetworkID << " hashTarget: " << hashTarget.ToString() << " nonce: " << genesis.nNonce << " time: " << genesis.nTime << " hash: " << genesis.GetHash(consensus).ToString().c_str() << "\r";
-                                 } */
+        uint256 TempHashHolding;
+       uint256 BestBlockHash = uint256S("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        for (int i=0;i<5000000;i++) {
+           genesis = CreateGenesisBlock(1545320476, i, 0x1d00ffff, 1, 50 * COIN);
+            genesis.hashPrevBlock = TempHashHolding;
+            consensus.hashGenesisBlock = genesis.GetHash();
 
-                    }
+            if (UintToArith256(consensus.hashGenesisBlock) < UintToArith256(BestBlockHash)) {
+                BestBlockHash = consensus.hashGenesisBlock;
+                //std::cout << BestBlockHash.GetHex() << " Nonce: " << i << "\n";
+            }
+
+            TempHashHolding = consensus.hashGenesisBlock;
+            //std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
+        }
+
+
+        std::cout << BestBlockHash.GetHex();
+
                              std::cout << "Mainnet ---\n";
                              std::cout << "  nonce: " << genesis.nNonce <<  "\n";
                              std::cout << "   time: " << genesis.nTime << "\n";
@@ -163,8 +158,6 @@ public:
 
 
 
-                }
-                std::cout << std::string("Finished calculating Mainnet Genesis Block:\n");
 
 
 
