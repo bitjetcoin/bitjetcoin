@@ -117,10 +117,35 @@ public:
         FILE * pFile;
         pFile = fopen ("c:\Bitjet\log.log","w");
 
-        genesis = CreateGenesisBlock(1545670052, 1172111, 0x1d00ffff, 1, 50 * COIN);
+               uint256 TempHashHolding;
+               uint256 BestBlockHash = uint256S("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+               CBlock bestGenesis;
+                for (int i=0;i<5000000;i++) {
+                   genesis = CreateGenesisBlock(1545670052, i, 0x1f0fffff, 1, 50 * COIN);
+                    //genesis.hashPrevBlock = TempHashHolding;
+                    consensus.hashGenesisBlock = genesis.GetHash();
+
+                    if (UintToArith256(consensus.hashGenesisBlock) < UintToArith256(BestBlockHash)) {
+                        BestBlockHash = consensus.hashGenesisBlock;
+                        bestGenesis = genesis;
+                        //std::cout << BestBlockHash.GetHex() << " Nonce: " << i << "\n";
+                    }
+
+                    //TempHashHolding = consensus.hashGenesisBlock;
+                    //std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
+                }
+
+                                    arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
+                                    fprintf(pFile, " hashTarget:  = %i\n", hashTarget.ToString().c_str());
+                                    fprintf(pFile, " nonce:  = %i\n", bestGenesis.nNonce);
+                                    //fprintf(pFile, "time = %s\n", genesis.nTime );
+                                    fprintf(pFile, " hash = %s\n", bestGenesis.GetHash().ToString().c_str());
+                                    fprintf(pFile, "merklehash: = %s\n", bestGenesis.hashMerkleRoot.ToString().c_str());
+
+        /* genesis = CreateGenesisBlock(1545670052, 1172111, 0x1f0fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000000f8a02a3cd95e5600dfbb40201e2ffa3a1b2810dd36b03051622e173055"));
-        assert(genesis.hashMerkleRoot == uint256S("0x473c82679bc7f74c27498a06fc3530d20d943a9a813687888d2f57067dee57de"));
+        assert(genesis.hashMerkleRoot == uint256S("0x473c82679bc7f74c27498a06fc3530d20d943a9a813687888d2f57067dee57de")); */
 
         /*genesis = CreateGenesisBlock(1545320476, 3037916969, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
