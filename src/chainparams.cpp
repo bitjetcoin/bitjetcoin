@@ -142,10 +142,10 @@ public:
                                     fprintf(pFile, " hash = %s\n", bestGenesis.GetHash().ToString().c_str());
                                     fprintf(pFile, "merklehash: = %s\n", bestGenesis.hashMerkleRoot.ToString().c_str());
 
-        /* genesis = CreateGenesisBlock(1545670052, 1172111, 0x1f0fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1545670052, 1172111, 0x1f0fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000000f8a02a3cd95e5600dfbb40201e2ffa3a1b2810dd36b03051622e173055"));
-        assert(genesis.hashMerkleRoot == uint256S("0x473c82679bc7f74c27498a06fc3530d20d943a9a813687888d2f57067dee57de")); */
+        assert(genesis.hashMerkleRoot == uint256S("0x473c82679bc7f74c27498a06fc3530d20d943a9a813687888d2f57067dee57de"));
 
         /*genesis = CreateGenesisBlock(1545320476, 3037916969, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
