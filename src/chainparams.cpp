@@ -73,7 +73,7 @@ public:
         consensus.BIP65Height = 388381; // 000000000000000004c2b624ed5d7756c508d90fd0da2c7c679febfa6c4735f0
         consensus.BIP66Height = 363725; // 00000000000000000379eaa19dce8c9b722d46ae6a57c2f1a988119488b50931
         //consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         //consensus.nPowTargetTimespan = 60 * 60; // one hour
         //consensus.nPowTargetSpacing = 10;
         consensus.nPowTargetTimespan = 60; // one hour
@@ -117,15 +117,16 @@ public:
         FILE * pFile;
         pFile = fopen ("c:\Bitjet\log.log","w");
 
-        //genesis = CreateGenesisBlock(1545670052, 1172111, 0x1d00ffff, 1, 50 * COIN);
-        //consensus.hashGenesisBlock = genesis.GetHash();
-
-        genesis = CreateGenesisBlock(1545320476, 3037916969, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1545670052, 1172111, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-
-        assert(consensus.hashGenesisBlock == uint256S("0x00000000ab99e02aab62628a3d7d80e12ba2ee42ada34bbc2324b43624c82f47"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000000f8a02a3cd95e5600dfbb40201e2ffa3a1b2810dd36b03051622e173055"));
         assert(genesis.hashMerkleRoot == uint256S("0x473c82679bc7f74c27498a06fc3530d20d943a9a813687888d2f57067dee57de"));
 
+        /*genesis = CreateGenesisBlock(1545320476, 3037916969, 0x1d00ffff, 1, 50 * COIN);
+        consensus.hashGenesisBlock = genesis.GetHash();
+        assert(consensus.hashGenesisBlock == uint256S("0x00000000ab99e02aab62628a3d7d80e12ba2ee42ada34bbc2324b43624c82f47"));
+        assert(genesis.hashMerkleRoot == uint256S("0x473c82679bc7f74c27498a06fc3530d20d943a9a813687888d2f57067dee57de"));
+*/
         std::cout << consensus.hashGenesisBlock.ToString();
         printf("consensus.hashGenesisBlock = %s\n", genesis.GetHash().ToString().c_str());
         printf("genesis.hashMerkleRoot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
