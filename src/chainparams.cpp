@@ -136,7 +136,7 @@ public:
                 }
 
                                     arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
-                                    fprintf(pFile, " hashTarget:  = %i\n", hashTarget.ToString().c_str());
+                                    fprintf(pFile, " hashTarget:  = %s\n", hashTarget.ToString().c_str());
                                     fprintf(pFile, " nonce:  = %i\n", bestGenesis.nNonce);
                                     //fprintf(pFile, "time = %s\n", genesis.nTime );
                                     fprintf(pFile, " hash = %s\n", bestGenesis.GetHash().ToString().c_str());
