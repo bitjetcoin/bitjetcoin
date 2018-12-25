@@ -123,12 +123,13 @@ public:
     uint256() {}
     explicit uint256(const std::vector<unsigned char>& vch) : base_blob<256>(vch) {}
 
-        int GetNibble(int index) const
-        {
-            if (index % 2 == 0)
-                return(data[index / 2] >> 4);
-            return(data[index / 2] & 0x0F);
-        }
+    int GetNibble(int index) const
+    {
+        index = 63 - index;
+        if (index % 2 == 1)
+            return(data[index / 2] >> 4);
+        return(data[index / 2] & 0x0F);
+    }
 };
 
 /* uint256 from const char *.
