@@ -4098,7 +4098,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     <message>
         <location line="-184"/>
         <source>Bitcoin Core</source>
-        <translation type="unfinished">Bitcoin Core</translation>
+        <translation type="unfinished">Bitjet Core</translation>
     </message>
     <message>
         <location line="+1"/>

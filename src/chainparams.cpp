@@ -77,14 +77,12 @@ public:
         */
         //consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.powLimit = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        //consensus.nPowTargetTimespan = 60 * 60; // one hour
-        //consensus.nPowTargetSpacing = 10;
-        consensus.nPowTargetTimespan = 60; // one hour
-        consensus.nPowTargetSpacing = 1;
+        consensus.nPowTargetTimespan = 60 * 60; // one hour
+        consensus.nPowTargetSpacing = 10; // 1o sec
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 57; // 95% of 2016
-        consensus.nMinerConfirmationWindow = 60; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nRuleChangeActivationThreshold = 342; // 95% of 360
+        consensus.nMinerConfirmationWindow = 360; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
