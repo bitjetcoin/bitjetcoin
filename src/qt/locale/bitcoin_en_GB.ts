@@ -3097,7 +3097,7 @@
     </message>
     <message>
         <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <translation>Bitjet Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

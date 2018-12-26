@@ -371,7 +371,7 @@
     </message>
     <message>
         <source>Bitcoin</source>
-        <translation>Bitcoin Core</translation>
+        <translation>Bitjet Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -750,7 +750,7 @@
     </message>
     <message>
         <source>Bitcoin</source>
-        <translation>Bitcoin Core</translation>
+        <translation>Bitjet Core</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -2153,7 +2153,7 @@
     </message>
     <message>
         <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <translation>Bitjet Core</translation>
     </message>
     <message>
         <source>The %s developers</source>
