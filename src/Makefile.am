@@ -80,14 +80,14 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += bitjetd
+  bin_PROGRAMS += bitcoind
 endif
 
 if BUILD_BITCOIN_CLI
-  bin_PROGRAMS += bitjet-cli
+  bin_PROGRAMS += bitcoin-cli
 endif
 if BUILD_BITCOIN_TX
-  bin_PROGRAMS += bitjet-tx
+  bin_PROGRAMS += bitcoin-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
