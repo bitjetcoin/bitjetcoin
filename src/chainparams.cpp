@@ -116,14 +116,14 @@ public:
         nDefaultPort = 8778;
         nPruneAfterHeight = 100000;
 
-/*        FILE * pFile;
+        FILE * pFile;
         pFile = fopen ("c:\Bitjet\log.log","w");
 
                uint256 TempHashHolding;
                uint256 BestBlockHash = uint256S("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
                CBlock bestGenesis;
                 for (int i=0;i<5000000;i++) {
-                   genesis = CreateGenesisBlock(1545670052, i, 0x1f0fffff, 1, 50 * COIN);
+                   genesis = CreateGenesisBlock(1546098472, i, 0x1f0fffff, 1, 50 * COIN);
                     //genesis.hashPrevBlock = TempHashHolding;
                     consensus.hashGenesisBlock = genesis.GetHash();
 
@@ -143,8 +143,8 @@ public:
                                     //fprintf(pFile, "time = %s\n", genesis.nTime );
                                     fprintf(pFile, " hash = %s\n", bestGenesis.GetHash().ToString().c_str());
                                     fprintf(pFile, "merklehash: = %s\n", bestGenesis.hashMerkleRoot.ToString().c_str());
-*/
-        genesis = CreateGenesisBlock(1545670052, 2433186, 0x1f0fffff, 1, 50 * COIN);
+
+        genesis = CreateGenesisBlock(1546098472, 2433186, 0x1f0fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000001fcfe00f58953ddfd5544ab3d1fa08f603a0c159609a032160ad92d9232"));
         assert(genesis.hashMerkleRoot == uint256S("0x473c82679bc7f74c27498a06fc3530d20d943a9a813687888d2f57067dee57de"));
