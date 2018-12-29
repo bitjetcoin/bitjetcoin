@@ -144,7 +144,7 @@ public:
                                     fprintf(pFile, " hash = %s\n", bestGenesis.GetHash().ToString().c_str());
                                     fprintf(pFile, "merklehash: = %s\n", bestGenesis.hashMerkleRoot.ToString().c_str());
 */
-        genesis = CreateGenesisBlock(1546098472, 2433186, 0x1f0fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1546098472, 3991329, 0x1f0fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("00000009f91c1369c79b7fcd3504d37fc3eb41857dd0879d752bfc48390a1554"));
         assert(genesis.hashMerkleRoot == uint256S("0x473c82679bc7f74c27498a06fc3530d20d943a9a813687888d2f57067dee57de"));
