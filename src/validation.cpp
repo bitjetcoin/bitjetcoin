@@ -1189,7 +1189,7 @@ bool IsInitialBlockDownload()
         return true;
 
     LogPrintf("IsInitialBlockDownload - chainActive.Tip() == nullptr - passed\n");
-    LogPrintf("nChainWork = %f\n", chainActive.Tip()->nChainWork);
+    //LogPrintf("nChainWork = %f\n", chainActive.Tip()->nChainWork);
 
     if (chainActive.Tip()->nChainWork < nMinimumChainWork)
         return true;
