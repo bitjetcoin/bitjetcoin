@@ -77,13 +77,13 @@ public:
         */
         //consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.powLimit = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 60 * 60; // one hour
+        consensus.nPowTargetTimespan = 60 * 10; // 10 min
         consensus.nPowTargetSpacing = 10; // 10 sec
         
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 342; // 95% of 360
-        consensus.nMinerConfirmationWindow = 360; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nRuleChangeActivationThreshold = 57; // 95% of 360
+        consensus.nMinerConfirmationWindow = 60; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
@@ -115,15 +115,15 @@ public:
         pchMessageStart[3] = 0xd0;
         nDefaultPort = 8778;
         nPruneAfterHeight = 100000;
-
+/*
         FILE * pFile;
         pFile = fopen ("c:\Bitjet\log.log","w");
 
                uint256 TempHashHolding;
                uint256 BestBlockHash = uint256S("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
                CBlock bestGenesis;
-                for (int i=0;i<50000000;i++) {
-                   genesis = CreateGenesisBlock(1546161795, i, 0x1f0fffff, 1, 50 * COIN);
+                for (int i=0;i<5000000;i++) {
+                   genesis = CreateGenesisBlock(1546098472, i, 0x1f0fffff, 1, 50 * COIN);
                     //genesis.hashPrevBlock = TempHashHolding;
                     consensus.hashGenesisBlock = genesis.GetHash();
 
@@ -143,7 +143,7 @@ public:
                                     //fprintf(pFile, "time = %s\n", genesis.nTime );
                                     fprintf(pFile, " hash = %s\n", bestGenesis.GetHash().ToString().c_str());
                                     fprintf(pFile, "merklehash: = %s\n", bestGenesis.hashMerkleRoot.ToString().c_str());
-
+*/
         genesis = CreateGenesisBlock(1546161795, 3991329, 0x1f0fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("00000009f91c1369c79b7fcd3504d37fc3eb41857dd0879d752bfc48390a1554"));
