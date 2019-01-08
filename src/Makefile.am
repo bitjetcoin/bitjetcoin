@@ -80,7 +80,7 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += bitcoind
+  bin_PROGRAMS += bitjetd
 endif
 
 if BUILD_BITCOIN_CLI
